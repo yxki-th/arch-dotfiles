@@ -1,0 +1,99 @@
+@import "~/.config/rofi/themes/catppuccin-mocha.rasi"
+
+configuration {
+	modi: "drun";
+	show-icons: true;
+	icons-theme: "Papirus-Dark";
+}
+
+*{
+	font: "HeavyDataNerdFont 15";
+}
+
+window {
+	location: center;
+	anchor: center;
+	width: 550px;
+
+	enabled: true;
+	border-radius:0px;
+	cursor: default;
+}
+
+mainbox {
+	enabled: true;
+	orientation: vertical;
+	children: ["imagebox", "listbox"];
+}
+
+imagebox {
+  margin: 0px;
+	padding: 10px;
+	orientation: vertical;
+	background-image: url("/home/yxki/Media/Wallpapers/frieren.png", width);
+	children: ["inputbar"];
+}
+
+listbox {
+	spacing: 20px;
+	padding: 0px;
+	orientation: vertical;
+	children: ["listview"];
+}
+
+inputbar {
+	enabled: true;
+	spacing: 10px;
+	padding: 10px;
+  text-color: @subtext1;
+  background-color: transparent;
+	border-radius: 0px;
+	children: ["textbox-prompt-colon", "entry"];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         " :";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+ 
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+	children: [ "element-text", "element-icon"];
+}
+
+element-text{
+	padding: 2px;
+}
+
+element-icon {
+	padding: 2px;
+}
+

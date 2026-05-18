@@ -1,0 +1,101 @@
+{
+  "layer": "", "position": "bottom",
+  "modules-left": [ "hyprland/workspaces", "hyprland/window", "custom/media"],
+  "modules-center": [],
+  "modules-right": ["pulseaudio","cpu", "memory", "network", "clock", "battery"],
+
+
+  "clock": {
+  	"format": "{:%H:%M %p - %a %d %b %Y} ",
+        "tooltip-format": "Date: {:%Y-%m-%d}"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces": {
+      		"*": 1 // 5 workspaces by default on every monitor
+    },
+    "sort-by-number": true
+  },
+
+  "pulseaudio": {
+    "format": "vol {volume}%",
+    "format-bluetooth": "vol {volume}%",
+  	"format-muted": "vol 0%",
+  	"on-click-right": "pavucontrol",
+	  "tooltip-format" : "{volume}%",
+  },
+
+  "cpu" : {
+	  "format" : "cpu {usage}%",
+	  "interval" : 2,
+	  "states" : {
+		  "critical" : 90,
+	  }
+  },
+
+  "memory" : {
+	  "format" : "mem {percentage}%",
+	  "interval" : 2,
+	  "states" : {
+	  "critical" : 80,
+	  }
+  },
+
+  "network" : {
+    "format-wifi": "  {bandwidthDownBits}%",
+    "format-ethernet":"  {bandwidthDownBits}%",
+    "format-disconnected": "disconnected%",
+  },
+
+  "battery": {
+  	"format": "{icon} {capacity}%",
+  	"format-charging": "󰂄 {capacity}%",
+  	"format-plugged": " {capacity}%",
+	  "interval" : 5,
+	  "states" : {
+		  "warning": 20,
+		  "critical": 10
+    },
+  	"format-icons": ["  ", "  ", "  ", "  ", "  "],
+	  "tooltip-format": "{capacity}%",
+  },
+
+  "hyprland/window": {
+	  "format": "{class}",
+	  "separate-outputs": true,
+	  "icon": false,
+	  "icon-size": 18,
+	  "rewrite": {
+	    "Mozilla Firefox": "Firefox",
+	    "firefox": "Firefox",
+	    "(.*) Thunar": "Thunar",
+	    "Spotify (.*)": "Spotify",
+	    "discord(.*)": "Discord",
+	    "Code": "VS Code",
+	    "kitty": "Kitty",
+	    "zen": "Zen",
+      "nvim" : "LazyVim"
+      }
+    },
+
+  "custom/media": {
+    "format": "󰎇  {}",
+    "exec": "~/.config/waybar/scripts/media.sh",
+    "interval": 2,
+    "on-click": "playerctl play-pause"
+  }
+}

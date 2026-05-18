@@ -1,0 +1,155 @@
+* {
+    rosewater: #f5e0dc;
+    flamingo:  #f2cdcd;
+    pink:      #f5c2e7;
+    mauve:     #cba6f7;
+    red:       #f38ba8;
+    maroon:    #eba0ac;
+    peach:     #fab387;
+    yellow:    #f9e2af;
+    green:     #a6e3a1;
+    teal:      #94e2d5;
+    sky:       #89dceb;
+    sapphire:  #74c7ec;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+    text:      #cdd6f4;
+    subtext1:  #bac2de;
+    subtext0:  #a6adc8;
+    overlay2:  #9399b2;
+    overlay1:  #7f849c;
+    overlay0:  #6c7086;
+    surface2:  #585b70;
+    surface1:  #45475a;
+    surface0:  #313244;
+    base:      #1e1e2e;
+    mantle:    #181825;
+    crust:     #11111b;
+
+    /* Semantic mappings */
+    background-color: transparent;
+    text-color:       @text;
+
+    accent:     @mauve;
+    urgent:     @red;
+    on-accent:  @crust;
+}
+
+window {
+    background-color: @base;
+    border:           2px;
+    border-color:     @surface1;
+    border-radius:    12px;
+    width:            520px;
+    padding:          0px;
+}
+
+mainbox {
+    background-color: transparent;
+    children:         [ inputbar, message, listview ];
+    spacing:          0px;
+    padding:          12px;
+}
+
+/* ── Search bar ── */
+inputbar {
+    background-color: @mantle;
+    border-radius:    8px;
+    children:         [ prompt, entry ];
+    padding:          10px 14px;
+    margin:           0px 0px 10px 0px;
+    spacing:          8px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @accent;
+    font:             "JetBrainsMono Nerd Font 11";
+    vertical-align:   0.5;
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @text;
+    placeholder:      "Search...";
+    placeholder-color: @overlay0;
+    font:             "JetBrainsMono Nerd Font 11";
+    vertical-align:   0.5;
+    cursor:           text;
+}
+
+/* ── List ── */
+listview {
+    background-color: transparent;
+    columns:          1;
+    lines:            8;
+    scrollbar:        false;
+    spacing:          4px;
+    fixed-height:     true;
+    cycle:            true;
+}
+
+element {
+    background-color: transparent;
+    border-radius:    6px;
+    padding:          8px 10px;
+    spacing:          10px;
+    orientation:      horizontal;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+element normal.urgent {
+    background-color: transparent;
+    text-color:       @urgent;
+}
+
+element normal.active {
+    background-color: transparent;
+    text-color:       @accent;
+}
+
+element selected.normal {
+    background-color: @surface0;
+    text-color:       @accent;
+}
+
+element selected.urgent {
+    background-color: @surface0;
+    text-color:       @urgent;
+}
+
+element selected.active {
+    background-color: @surface0;
+    text-color:       @accent;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             24px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    font:             "JetBrainsMono Nerd Font 11";
+    vertical-align:   0.5;
+}
+
+/* ── Message / error bar ── */
+message {
+    background-color: @surface0;
+    border-radius:    6px;
+    margin:           0px 0px 10px 0px;
+    padding:          8px 12px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @yellow;
+    font:             "JetBrainsMono Nerd Font 11";
+}

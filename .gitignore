@@ -1,0 +1,7 @@
+# Doom Emacs
+.config/doom/straight/
+.config/doom/eln-cache/
+.config/doom/.local/
+
+# Fastfetch
+.config/fastfetch/cache/

@@ -1,0 +1,195 @@
+/* ── Catppuccin Mocha palette + semantic tokens ─────────────────────────── */
+* {
+    rosewater: #f5e0dc;
+    flamingo:  #f2cdcd;
+    pink:      #f5c2e7;
+    mauve:     #cba6f7;
+    red:       #f38ba8;
+    maroon:    #eba0ac;
+    peach:     #fab387;
+    yellow:    #f9e2af;
+    green:     #a6e3a1;
+    teal:      #94e2d5;
+    sky:       #89dceb;
+    sapphire:  #74c7ec;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+    text:      #cdd6f4;
+    subtext1:  #bac2de;
+    subtext0:  #a6adc8;
+    overlay2:  #9399b2;
+    overlay1:  #7f849c;
+    overlay0:  #6c7086;
+    surface2:  #585b70;
+    surface1:  #45475a;
+    surface0:  #313244;
+    base:      #1e1e2e;
+    mantle:    #181825;
+    crust:     #11111b;
+
+    background-color: transparent;
+    text-color:       @text;
+
+    accent:    @mauve;
+    urgent:    @red;
+}
+
+/* ── Configuration ───────────────────────────────────────────────────────── */
+configuration {
+    modi:         "drun";
+    show-icons:   true;
+    icons-theme:  "Papirus-Dark";
+}
+
+/* ── Global font ─────────────────────────────────────────────────────────── */
+* {
+    font: "HeavyDataNerdFont 15";
+}
+
+/* ── Window ──────────────────────────────────────────────────────────────── */
+window {
+    location:         center;
+    anchor:           center;
+    width:            550px;
+    enabled:          true;
+    border-radius:    0px;
+    border:           2px;
+    border-color:     @surface1;
+    background-color: @base;
+    cursor:           default;
+}
+
+/* ── Main layout ─────────────────────────────────────────────────────────── */
+mainbox {
+    enabled:          true;
+    orientation:      vertical;
+    background-color: transparent;
+    children:         [ "imagebox", "listbox" ];
+}
+
+/* ── Image / search header ───────────────────────────────────────────────── */
+imagebox {
+    margin:           10px;
+    padding:          10px;
+    orientation:      vertical;
+    background-image: url("/home/yxki/Media/Wallpapers/drehmal.png", width);
+    children:         [ "inputbar" ];
+}
+
+inputbar {
+    enabled:          true;
+    spacing:          10px;
+    padding:          10px 16px;
+    border-radius:    0px;
+    background-color: @crust;
+    text-color:       @text;
+    children:         [ "textbox-prompt-colon", "entry" ];
+}
+
+/* Fixed: was "text-prompt-colon" (wrong name) */
+textbox-prompt-colon {
+    enabled:          true;
+    expand:           false;
+    str:              "";
+    padding:          0px 2px;
+    background-color: inherit;
+    text-color:       @accent;
+}
+
+entry {
+    enabled:          true;
+    background-color: inherit;
+    text-color:       inherit;
+    cursor:           text;
+    placeholder:      "Search";
+    placeholder-color: @overlay0;
+}
+
+/* ── List section ────────────────────────────────────────────────────────── */
+listbox {
+    spacing:          20px;
+    padding:          20px;
+    orientation:      vertical;
+    background-color: transparent;
+    children:         [ "listview" ];
+}
+
+listview {
+    enabled:          true;
+    columns:          1;
+    lines:            8;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     true;
+    fixed-columns:    true;
+    spacing:          10px;
+    background-color: transparent;
+    cursor:           "default";
+}
+
+/* ── Elements ────────────────────────────────────────────────────────────── */
+element {
+    border-radius:    0px;
+    padding:          6px 8px;
+    background-color: transparent;
+    text-color:       @text;
+    cursor:           pointer;
+    children:         [ "element-text", "element-icon" ];
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color: transparent;
+    text-color:       @urgent;
+}
+
+element normal.active,
+element alternate.active {
+    background-color: transparent;
+    text-color:       @accent;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @surface0;
+    text-color:       @accent;
+}
+
+element selected.urgent {
+    background-color: @surface0;
+    text-color:       @urgent;
+}
+
+element-text {
+    padding:          2px;
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element-icon {
+    padding:          2px;
+    size:             24px;
+    background-color: transparent;
+    vertical-align:   0.5;
+}
+
+/* ── Error messages ──────────────────────────────────────────────────────── */
+message {
+    background-color: @surface0;
+    padding:          8px 12px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @yellow;
+}
