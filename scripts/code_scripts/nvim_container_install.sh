@@ -16,6 +16,6 @@ git clone --bare https://github.com/yxki-th/arch-dotfiles.git /tmp/dotfiles
 ls /tmp/dotfiles
 ls /tmp/dotfiles/.config/
 cp -r /tmp/dotfiles/.config/nvim ~/.config/nvim
-rm -rf /tmp/dotfiles
+#rm -rf /tmp/dotfiles
 
 echo "nvim + lazyvim config ready. Run nvim to start"
