@@ -7,7 +7,8 @@
 
   "clock": {
   	"format": "{:%H:%M %p - %a %d %b %Y} ",
-        "tooltip-format": "Date: {:%Y-%m-%d}"
+    "tooltip-format": "Date: {:%Y-%m-%d}",
+    "timezone" : "Europe/London"
   },
 
   "hyprland/workspaces": {
