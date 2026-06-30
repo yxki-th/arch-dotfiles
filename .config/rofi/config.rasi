@@ -30,7 +30,7 @@ imagebox {
   margin: 0px;
 	padding: 10px;
 	orientation: vertical;
-	background-image: url("/home/yxki/Media/Wallpapers/frieren.png", width);
+	background-image: url("~/.config/hypr/wallpapers/frierenShrek.jpg", width);
 	children: ["inputbar"];
 }
 
