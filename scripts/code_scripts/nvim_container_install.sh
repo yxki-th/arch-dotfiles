@@ -12,8 +12,8 @@ sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
 rm nvim-linux-x86_64.tar.gz
 
 # clone configs
-git clone --bare https://github.com/yxki-th/arch-dotfiles.git /tmp/dotfiles-bare
-git --git-dir=/tmp/dotfiles-bare --work-tree=$HOME checkout -- ~/.config/nvim/
-rm -rf /tmp/dotfiles-bare
+git clone --bare https://github.com/yxki-th/arch-dotfiles.git /tmp/dotfiles
+cp -r /tmp/dotfiles/.config/nvim ~/.config/nvim
+rm -rf /tmp/dotfiles
 
-echo "nvim + lazyvim configg ready. Run nvim to start"
+echo "nvim + lazyvim config ready. Run nvim to start"
